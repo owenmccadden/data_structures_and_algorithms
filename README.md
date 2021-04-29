@@ -1,2 +1,2 @@
 # Data_Structures_and_Algorithms
-Library of Data Structures and Algorithms in Python
+A library of data structures and algorithms in python written using Jupyter Notebook.
