@@ -126,7 +126,75 @@ sample.build_list([24,21,1,5,31,2,7,8,5])
 sample.print_list()
 
 
+# given an array of integers, d and an integer threshold t, return the number of triplets (a, b, c) that satisfy the following conditions:
+    # d[a] + d[b] + d[c] <= t
+    # d[a] < d[b] < d[c]
+# return the number of triplets without using brute force
 
+def triplets(t,d):
+    count = 0
+    for i in range(len(d)):
+        for j in range(i+1, len(d)):
+            for k in range(j+1, len(d)):
+                if d[i] + d[j] + d[k] <= t and d[i] < d[j] < d[k]:
+                    count += 1
+    return count
+
+
+
+
+# iterate from 10 to 1 and print the number
+
+for i in range(10,0,-1):
+    print(i)
+
+# given a dictionary of nums, return the key of the max value of the dictionary:
+
+def get_max_key(d):
+    max_key = None
+    max_value = None
+    for key, value in d.items():
+        if max_value is None or value > max_value:
+            max_key = key
+            max_value = value
+    return max_key
+    
+
+# create a binary tree node class
+
+class TreeNode(val=0, left=None, right=None):
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+    
+    def insert_left(self, data):
+        self.left = TreeNode(data)
+        return self.left
+    
+    def insert_right(self, data):
+        self.right = TreeNode(data)
+        return self.right
+
+    def preorder(self):
+        print(self.val)
+        if self.left:
+            self.left.preorder()
+        if self.right:
+            self.right.preorder()
+
+
+# create a binary tree with the following values:
+# level 1: 1
+# level 2: 2, 5
+# level 3: 3, 4, 6
+
+example = TreeNode(1)
+example.insert_left(2)
+example.insert_right(5)
+example.left.insert_left(3)
+example.left.insert_right(4)
+example.right.insert_right(6)
 
 
 
