@@ -197,6 +197,40 @@ example.left.insert_right(4)
 example.right.insert_right(6)
 
 
+# given two strings s and t, write a function that:
+    # returns -1 if t cannot be concatenated some number of times to make s
+    # otherwise, return the length of the smallest string that can be concatenated to make both s and t
+
+def find_smallest_string(s, t):
+    if len(s) < len(t):
+        return -1
+    for i in range(len(t)):
+        if s == t[i:]:
+            return len(s)
+        if t == s[i:]:
+            return len(t)
+    return -1
+
+# use numpy to create a random list of integers between 0 and 100 and a second random list of 100 numbers between 1 and 10
+# use matplotlib to plot the two random lists as a scatter graph
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
